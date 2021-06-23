@@ -9,3 +9,8 @@ app = Flask(__name__)
 def main(path: str) -> Response:
     app.logger.debug('processing proxy for {}'.format(path))
     return process_proxy(request)
+
+@app.route("/<path:path>", methods=['GET'])
+def main(path: str) -> Response:
+    app.logger.debug('processing proxy for {}'.format(path))
+    return process_proxy(request)
